@@ -33,15 +33,10 @@ $ git clone git@github.com:awaisanwar544/school-library.git
 ```
 $ bundle install
 ```
-### Usage
-
-- Run:
-```
-$ ruby [fileName].rb
-```
-
-- Edit the content as you like.
-
+### Running the Application
+-  Entry point for the application is `main.rb`
+-  Run `chmod 755 main.rb`
+-  Run `./main.rb` 
 
 ## Authors
 
