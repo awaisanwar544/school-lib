@@ -114,7 +114,7 @@ class App
     print 'If you want to create a student [Enter 1] or a teacher [Enter 2]: '
     person_role = gets.chomp
     case person_role
-    when '1'
+    when 1
       create_student
     when '2'
       create_teacher
