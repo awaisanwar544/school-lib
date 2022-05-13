@@ -34,10 +34,9 @@ $ git clone git@github.com:awaisanwar544/school-library.git
 $ bundle install
 ```
 ### Running the Application
->**Steps to excute the app locally**
-    -  Entry point for the application is `main.rb`
-    -  Run `chmod 755 main.rb`
-    -  Run `./main.rb` 
+-  Entry point for the application is `main.rb`
+-  Run `chmod 755 main.rb`
+-  Run `./main.rb` 
 
 ## Authors
 
