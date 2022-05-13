@@ -4,10 +4,10 @@ require './student'
 require './teacher'
 
 class App
-  attr_reader :persons, :books, :rentals
+  attr_reader :people, :books, :rentals
 
   def initialize
-    @persons = []
+    @people = []
     @books = []
     @rentals = []
   end
@@ -17,7 +17,7 @@ class App
     when '1'
       list_all_books
     when '2'
-      list_all_persons
+      list_all_people
     when '3'
       create_person
     when '4'
@@ -36,7 +36,7 @@ class App
     puts ''
     puts 'Please choose an operation from the following options'
     puts '1  →  List all books'
-    puts '2  →  List all persons'
+    puts '2  →  List all people'
     puts '3  →  Create a person'
     puts '4  →  Create a book'
     puts '5  →  Create a rental'
@@ -74,9 +74,9 @@ class App
     end
   end
 
-  def list_all_persons
-    if @persons.length.positive?
-      @persons.each_with_index do |person, index|
+  def list_all_people
+    if @people.length.positive?
+      @people.each_with_index do |person, index|
         puts "#{index + 1}) Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
       end
     else
@@ -94,7 +94,7 @@ class App
     print 'Classroom: '
     classroom = gets.chomp
     person = Student.new(age, name, parent_permission, classroom)
-    @persons << person
+    @people << person
     message('Person created successfullly', 'New student added')
   end
 
@@ -106,7 +106,7 @@ class App
     print 'Specialization: '
     specialization = gets.chomp
     person = Teacher.new(age, name, specialization)
-    @persons << person
+    @people << person
     message('Person created successfullly', 'New Teacher added')
   end
 
@@ -139,8 +139,8 @@ class App
     selected_book = @books[gets.chomp.to_i - 1]
     puts 'Select a person from the following list by serial number'
     puts ''
-    list_all_persons
-    selected_person = @persons[gets.chomp.to_i - 1]
+    list_all_people
+    selected_person = @people[gets.chomp.to_i - 1]
     print 'Date: '
     date = gets.chomp
     @rentals << selected_person.add_rental(date, selected_book)
@@ -150,7 +150,7 @@ class App
   def list_all_rentals
     print 'Enter person ID: '
     id = gets.chomp.to_i
-    person_details = @persons.find { |person| person.id == id }
+    person_details = @people.find { |person| person.id == id }
     if person_details
       puts 'Rentals'
       person_details.rental.each_with_index do |rental, index|
